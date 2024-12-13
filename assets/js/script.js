@@ -1,5 +1,6 @@
 const card = document.querySelectorAll('.card');
 const url = 'https://striveschool-api.herokuapp.com/books';
+let btnCancel = document.querySelectorAll('.bg-white');
 let myBooks;
 
 document.addEventListener('load', init());
@@ -29,4 +30,15 @@ function printBooks() {
     }
 }
 
+let arrBtnCancel = Array.from(btnCancel);
+const col = document.querySelectorAll('col-4');
+let arrCol = Array.from(col);
+
+arrCol.forEach((cols) => {
+    cols.addEventListener('mouseenter', function(){
+        btnCancel.addEventListener('click', function() {
+            col.style.display = "none";
+        })
+    })
+})
 
